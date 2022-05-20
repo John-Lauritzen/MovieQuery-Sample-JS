@@ -45,7 +45,7 @@ app.use('/movies', (req, res, next) => {
     var Baseurl = '';
     var Size = '';
     var TMDBresults = '';
-    //Query TMDB - TO BE FIXED: Variables are not available outside of axios
+    //Query TMDB - TO BE FIXED: Variables are not available outside of axios resulting in emptry result and incomplete data
     axios
         .get(TMDBconfig)
         .then(res => {
