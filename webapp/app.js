@@ -45,7 +45,7 @@ app.use('/movies', (req, res, next) => {
     var Baseurl = '';
     var Size = '';
     var TMDBresults = '';
-    //Query TMDB - TO BE FIXED: Variables are not available outside of axios resulting in emptry result and incomplete data
+    //Query TMDB - TO BE FIXED: Final data is not converting to JSON and being returned
     axios
         .get(TMDBconfig)
         .then(res => {
@@ -82,7 +82,7 @@ app.use('/movies', (req, res, next) => {
                 i++;
             };
             console.log(Tempdata);
-            const TMDBresults = Tempdata;
+            TMDBresults = JSON.parse(Tempdata);
         })
         .catch(error => {
             console.error(error);
